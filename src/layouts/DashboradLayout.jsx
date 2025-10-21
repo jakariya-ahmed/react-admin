@@ -1,42 +1,50 @@
-// src/layouts/DashboardLayout.jsx
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import Sidebar from "../component/sidebar/Sidebar";
 import Topbar from "../component/topbar/Topbar";
+import { Outlet } from "react-router-dom";
 
-export default function DashboardLayout() {
+export default function DashboardLayout({ children }) {
+
   const [isCollapsed, setIsCollapsed] = useState(false);
-  const [isMobile, setIsMobile] = useState(window.innerWidth <= 480);
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-
-  // Detect screen resize
+  
+  // Detect screen size changes
   useEffect(() => {
-    const handleResize = () => setIsMobile(window.innerWidth <= 480);
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
+    const handleResize = () => setIsMobile(window.innerWidth <= 768);
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
   }, []);
 
   const toggleSidebar = () => {
-    if (isMobile) setIsSidebarOpen(!isSidebarOpen);
-    else setIsCollapsed(!isCollapsed);
-  };
+    if (isMobile) setIsSidebarOpen(!isSidebarOpen)
+    else setIsCollapsed(!isCollapsed); 
+  }
 
-  return (
+
+
+  return(
     <div className="flex h-screen overflow-hidden">
-      {/* Sidebar */}
-      <Sidebar
-        isCollapsed={isCollapsed}
+        {/* Admin Sidebar  */}
+        <Sidebar 
         isMobile={isMobile}
+        isCollapsed={isCollapsed}
         isSidebarOpen={isSidebarOpen}
         toggleSidebar={toggleSidebar}
-      />
+        
+        /> 
 
-      {/* Main Content */}
-      <div className="flex-1 flex flex-col">
-        <Topbar toggleSidebar={toggleSidebar} />
-        <main className="flex-1 bg-gray-50 p-4 overflow-y-auto">
-          <h1 className="text-2xl font-bold text-gray-700">Responsive Admin Dashboard</h1>
-        </main>
-      </div>
+        <div className="flex-1 flex flex-col">
+            {/* Admin Topbar  */}
+            <Topbar />
+
+            {/* Main Content  */}
+            <main>
+              <Outlet />
+            </main>
+            {/* Main Content  */}
+
+        </div>
     </div>
   );
 }

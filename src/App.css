@@ -1,5 +1,18 @@
+
+
 @import "tailwindcss";
 
 body{
-    background-color: #ddd;
+    font-family: 'Segoe UI', sans-serif;
 }
+
+html{
+    scroll-behavior: smooth;
+}
+
+span{
+    color: #A3AED1;
+}
+
+
+
