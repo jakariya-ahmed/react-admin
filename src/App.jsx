@@ -1,14 +1,12 @@
 import { useState } from 'react'
 import './App.css'
+import { BrowserRouter } from 'react-router-dom'
+import AppRouter from './routes/AppRouter'
 
 function App() {
 
   return (
-    <>
-      <div>
-        <h1 className='text-amber-600 text-3xl'>React Admin Panel</h1>
-      </div>
-    </>
+    <AppRouter />
   )
 }
 
