@@ -1,4 +1,4 @@
-// src/components/Topbar.jsx
+
 import {
   Menu,
   Search,
@@ -31,7 +31,7 @@ export default function Topbar({ toggleSidebar }) {
 
         <div className="relative cursor-pointer">
           <ShoppingCart className="text-gray-400 hover:text-amber-500 w-4" />
-          <span className="absolute -top-1 -right-1 bg-amber-500 text-white text-xs rounded-full px-1">
+          <span className="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full px-1">
             3
           </span>
         </div>

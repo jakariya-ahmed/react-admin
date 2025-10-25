@@ -63,7 +63,9 @@ const Menu = ({ isCollapsed }) => {
           {/* Child with Grandchild */}
           <button
             onClick={() => toggleChild("analytics")}
-            className="flex items-center justify-between w-full p-2 rounded-md hover:bg-indigo-900"
+            className={`flex items-center justify-between w-full p-2 rounded-md hover:bg-indigo-900 ${
+            openChild === "analytics" ? "bg-indigo-900 text-white" : ""
+          }`}
           >
             <span className="text-sm">Analytics</span>
             {openChild === "analytics" ? (
