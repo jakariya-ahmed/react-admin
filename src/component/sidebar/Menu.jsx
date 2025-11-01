@@ -125,7 +125,7 @@ const Menu = ({ isCollapsed }) => {
       {openParent === "products" && !isCollapsed && (
         <div className="ml-6 space-y-1">
           <NavLink
-            to="/products/list"
+            to="/admin/products"
             className={({ isActive }) =>
               `flex items-center p-2 rounded-md hover:bg-indigo-900 ${
                 isActive ? "bg-indigo-900 text-white" : ""
@@ -135,7 +135,7 @@ const Menu = ({ isCollapsed }) => {
             <span className="text-sm">Product List</span>
           </NavLink>
           <NavLink
-            to="/products/add"
+            to="/admin/add-product"
             className={({ isActive }) =>
               `flex items-center p-2 rounded-md hover:bg-indigo-900 ${
                 isActive ? "bg-indigo-900 text-white" : ""

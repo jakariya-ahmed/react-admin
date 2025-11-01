@@ -33,7 +33,7 @@ export default function Sidebar({
             `}
         >
          {/* Logo / Close Button */}
-            <div className="flex items-center justify-between p-4 b">
+            <div className="flex items-center justify-between p-4">
                 {!isCollapsed && <h1>ShopAdmin</h1>}
                 {isMobile ? (
                     <button onClick={toggleSidebar}> <X className="w-6 h-6 text-amber-600"/> </button>

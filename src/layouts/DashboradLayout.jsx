@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import Sidebar from "../component/sidebar/Sidebar";
 import Topbar from "../component/topbar/Topbar";
+import { Outlet } from "react-router-dom";
 
 export default function DashboardLayout() {
   const [isCollapsed, setIsCollapsed] = useState(false);
@@ -31,7 +32,7 @@ export default function DashboardLayout() {
       <div className="flex flex-col flex-1">
         <Topbar toggleSidebar={toggleSidebar}/>
         <main className="flex-1 overflow-y-auto p-4">
-          <h2>main Content will be here </h2>
+          <Outlet /> 
         </main>
       </div>
     </div>
