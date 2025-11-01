@@ -1,5 +1,8 @@
 import { title } from "framer-motion/client";
 import { useState } from "react";
+import SingleImageUpload from "./SingleImageUpload";
+import { PlusCircle } from "lucide-react";
+import GalleryImages from "./GalleryImages";
 
 export default function ProductForm() {
 
@@ -22,7 +25,7 @@ const [product, setProduct] = useState({
 
 // handle input change
 const handleProductChange = (e) => {
-    const [name, value] = e.target;
+    const {name, value} = e.target;
     setProduct({...product, [name] : value});
 }
     return (
@@ -88,16 +91,20 @@ const handleProductChange = (e) => {
                             className="w-full mb-2 border border-gray-300 rounded-lg px-3 py-2 focus:ring-0 focus:ring-indigo-700 focus:border-1 focus:border-indigo-900 focus:outline-none transition-all duration-150"
                         />
                         </div>
+                        <button className="flex items-center gap-1 p-2 px-3 bg-indigo-700 rounded-md text-white w-40"> Create Product 
+                            <PlusCircle className="w-5 h-5"/> 
+                        </button>
                     </div>
                 </div>
             </div>
             {/* right section  */}
-            <div className="w-full lg:w-[30%]">
+            <div className="w-full lg:w-[30%] space-y-6">
                 {/* Single image upload  */}
-                <div className="bg-white p-5 shadow-sm rounded-sm border-l-2 border-cyan-900">
-                    <h2 className="text-xl text-ingigo-900 font-semibold mb-4">Image Upload </h2>
-                    
-                </div>
+                <SingleImageUpload product={product} handleProductChange={handleProductChange} /> 
+                <GalleryImages /> 
+
+
+
             </div>
         </div>
     );
