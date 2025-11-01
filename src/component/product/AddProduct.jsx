@@ -1,5 +1,11 @@
+import ProductForm from "./ProductForm";
+
 export default function AddProduct() {
     return (
-        <h1>Add New Product</h1>
+        <>
+            {/* product simple form  */}
+            <ProductForm /> 
+        </>
+
     );
 }
