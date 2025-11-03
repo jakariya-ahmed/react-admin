@@ -16,6 +16,7 @@ import CartDropdown from "./CartDropdown";
 import { TopbarCartItems } from "../../data/data";
 import FullScreenToggle from "./FullScreenToggle";
 import NotificationDropdown from "./NotificationDropdown";
+import ProfileDropdown from "./ProfileDropdown";
 export default function Topbar({ toggleSidebar }) {
     const [isSearchOpen, setIsSearchOpen] = useState(false);
     // languages states 
@@ -64,7 +65,7 @@ export default function Topbar({ toggleSidebar }) {
 
   
   return (
-    <header className="flex items-center justify-between bg-white px-4 py-2">
+    <header className="flex items-center justify-between bg-white pl-4 pr-8 py-2">
       {/* Left: Collapse / Toggle Button */}
       <div className="flex items-center gap-3">
         <button
@@ -115,15 +116,9 @@ export default function Topbar({ toggleSidebar }) {
         <NotificationDropdown />
 
         <FullScreenToggle />
-        <div className="flex gap-x-2 cursor-pointer">
-          <div>
-            <img src="/img/avatar.jpeg" className="w-8 h-8 rounded-full" alt="Profile" />
-          </div>
-          <div className="leading-tight">
-            <p className="text-sm -mb-1 font-semibold text-indigo-900 ">John Smith</p>
-            <span className="text-xs text-gray-600 ">Frontend Developer</span>
-          </div>
-        </div>
+
+        <ProfileDropdown />
+
         <Settings className="text-gray-400 cursor-pointer hover:text-amber-500 hidden sm:block w-4" />
       </div>
 
