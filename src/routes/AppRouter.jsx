@@ -12,7 +12,7 @@ export default function AppRouter() {
                     <Route index element={<Dashboard />} />
                     {/* Products  */}
                     <Route path="add-product" element={<AddProduct /> } />
-                    <Route path="admin/products" element={<ProductsList /> } />
+                    <Route path="products" element={<ProductsList /> } />
 
                 </Route>
             </Routes>

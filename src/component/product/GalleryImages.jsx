@@ -21,11 +21,9 @@ export default function GalleryImages() {
 
 
     return (
-        <div className="bg-white p-5 shadow-sm rounded-sm border-l-2 border-cyan-900">
-            <h2 className="text-xl text-ingigo-900 font-semibold mb-4">Gallery Images <span className="text-indigo-900">*</span></h2>
-
-            {/* Upload Images  */}
-
+        
+      <>
+      {/* Upload Images  */}
       <label className="cursor-pointer flex flex-col items-center justify-center w-full h-40 border-2 border-dashed border-gray-300 rounded-lg bg-indigo-100 trasition-all duration-150">
         <div className="flex flex-col items-center text-gray-500">
             <svg
@@ -59,8 +57,8 @@ export default function GalleryImages() {
               ><X size={16} /></button>
           </div>
         ))}
-      </div>
-
         </div>
+      </>
+
     );
 }

@@ -22,7 +22,7 @@ export default function DashboardLayout() {
 
   return (
 
-    <div className="flex h-screen  overflow-hidden">
+    <div className="flex h-screen  overflow-hidden bg-gray-100">
       <Sidebar 
         isCollapsed={isCollapsed}
         isMobile={isMobile}
