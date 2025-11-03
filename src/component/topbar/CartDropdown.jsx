@@ -14,7 +14,7 @@ const CartDropdown = ({ items, onRemove }) => {
       </div>
 
       {/* Product List */}
-      <div className="max-h-64 overflow-y-auto">
+      <div className="max-h-100 overflow-y-auto">
         {items.length === 0 ? (
           <p className="text-center text-gray-500 py-4 text-sm">
             Your cart is empty.

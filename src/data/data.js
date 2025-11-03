@@ -1,5 +1,5 @@
-
-export const products = [
+import { getRandomDate } from "../utils/generateRandomData"
+export const TopbarCartItems = [
   {
     id: 1,
     cat: 'Fashion',
@@ -50,64 +50,5 @@ export const products = [
     status: 'completed',
     date: getRandomDate(),
   },
-  {
-    id: 6,
-    cat: 'Fashion',
-    name: "Ethnic School bag for children",
-    price: 1200,
-    image: "/img/tp-5.png",
-    stock: 'In Stock',
-    status: 'completed',
-    date: getRandomDate(),
-  },
-  {
-    id: 7,
-    cat: 'Electronic',
-    name: "Dslr Camera",
-    price: 1200,
-    image: "/img/tp-2.png",
-    stock: 'In Stock',
-    status: 'pending',
-    date: getRandomDate(),
-  },
-    {
-    id: 8,
-    cat: 'Fashion',
-    name: "Leather jacket for men",
-    price: 1200,
-    image: "/img/tp-3.png",
-    stock: 'In Stock',
-    status: 'pending',
-    date: getRandomDate(),
-  },
-  {
-    id: 9,
-    cat: 'Fashion',
-    name: "White shirt for man",
-    price: 1200,
-    image: "/img/tp-4.png",
-    stock: 'Stock Out',
-    status: 'pending',
-    date: getRandomDate(),
-  },
-  {
-    id: 10,
-    cat: 'Fashion',
-    name: "Ethnic School bag for children",
-    price: 1200,
-    image: "/img/tp-5.png",
-    stock: 'In Stock',
-    status: 'delivered',
-    date: getRandomDate(),
-  },
-  {
-    id: 11,
-    cat: 'Electronic',
-    name: "Dslr Camera",
-    price: 1200,
-    image: "/img/tp-2.png",
-    stock: 'In Stock',
-    status: 'delivered',
-    date: getRandomDate(),
-  },
+
 ]

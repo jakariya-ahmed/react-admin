@@ -13,7 +13,9 @@ import { useRef, useState, useEffect } from "react";
 import SearchModal from "./SearchModal";
 import LanguageDropdown from "./LanguageDropdown ";
 import CartDropdown from "./CartDropdown";
-
+import { TopbarCartItems } from "../../data/data";
+import FullScreenToggle from "./FullScreenToggle";
+import NotificationDropdown from "./NotificationDropdown";
 export default function Topbar({ toggleSidebar }) {
     const [isSearchOpen, setIsSearchOpen] = useState(false);
     // languages states 
@@ -21,26 +23,7 @@ export default function Topbar({ toggleSidebar }) {
     const [currentLang, setCurrentLang] = useState("en");
     // cart products state 
     const [isCartOpen, setIsCartOpen] = useState(false);
-    const [cartItems, setCartItems] = useState([
-      {
-        id: 1,
-        name: "Wireless Headphones",
-        price: 120,
-        image: "/img/headphone.png",
-      },
-      {
-        id: 2,
-        name: "Smart Watch",
-        price: 90,
-        image: "/img/watch.png",
-      },
-      {
-        id: 3,
-        name: "Bluetooth Speaker",
-        price: 75,
-        image: "/img/speaker.png",
-      },
-    ]);
+    const [cartItems, setCartItems] = useState(TopbarCartItems);
 
     const dropdownRef = useRef(null);
     // Close dropdown on outside click
@@ -129,16 +112,19 @@ export default function Topbar({ toggleSidebar }) {
         )}
       </div>
 
-        <div className="relative cursor-pointer hidden sm:block">
-          <Bell className="w-6 h-6 p-1 text-gray-400 cursor-pointer rounded-full hover:bg-gray-200 hover:text-amber-500 transition hidden sm:block"  />
-          <span className="absolute text-center -top-1 -right-1 bg-indigo-600 text-white text-xs rounded-full px-1 w-4 h-4">
-            5
-          </span>
-        </div>
+        <NotificationDropdown />
 
-        <Maximize2 className="text-gray-400 cursor-pointer hover:text-amber-500 hidden sm:block w-4" />
+        <FullScreenToggle />
+        <div className="flex gap-x-2 cursor-pointer">
+          <div>
+            <img src="/img/avatar.jpeg" className="w-8 h-8 rounded-full" alt="Profile" />
+          </div>
+          <div className="leading-tight">
+            <p className="text-sm -mb-1 font-semibold text-indigo-900 ">John Smith</p>
+            <span className="text-xs text-gray-600 ">Frontend Developer</span>
+          </div>
+        </div>
         <Settings className="text-gray-400 cursor-pointer hover:text-amber-500 hidden sm:block w-4" />
-        <User className="text-gray-400 cursor-pointer hover:text-amber-500 hidden sm:block w-4" />
       </div>
 
       <SearchModal isOpen={isSearchOpen} onClose={() => setIsSearchOpen(false)} />
